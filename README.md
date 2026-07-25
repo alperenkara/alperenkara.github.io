@@ -1,2 +1,2 @@
 # alperenkara.github.io
-Alperen Kara's CV
+Alperen Kara CV

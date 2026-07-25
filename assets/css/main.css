@@ -1,0 +1,642 @@
+/* Reset and base styles */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --text-color: #333;
+    --background-color: #b6b5b5;
+    --border-color: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+/* CV Container */
+.cv-container {
+    max-width: 60%;
+    margin: 1rem auto;
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Section Headers */
+.section-header {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Permission Section */
+.permission-box {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    background-color: #fff;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+/* Background Decorations */
+.bg-decoration-top,
+.bg-decoration-bottom {
+    top: 0!important;
+    background-position: left top!important;
+    position: absolute!important;
+    width: 100%;
+    height: 50%;
+    left: 0;
+    pointer-events: none;
+    background-size: cover!important;
+}
+
+
+/* Header Section */
+.cv-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.header-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+}
+
+.header-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.header-title-text {
+    font-size: 1.1rem;
+    color: #ff4f4f;
+    margin: 0;
+    font-weight: 500;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    text-align: right;
+    position: relative;
+    /* left: -5%; */ /*Negatif positioning*/
+    
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.contact-item.hidden {
+    display: none;
+}
+
+.contact-item img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Sections */
+.cv-section {
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Add more space before PERSONAL PROJECTS section */
+.two-column-grid .cv-section.personal-projects {
+    margin-top: 1rem !important;
+}
+
+/* Two-column layout */
+.two-column-grid {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 0%;
+    margin-bottom: 3rem;
+}
+
+/* Adjust section margins in grid */
+.two-column-grid .cv-section {
+    margin: 0;
+}
+
+/* Make timeline line stay within its column */
+.two-column-grid .timeline {
+    margin-right: 2rem;
+}
+
+/* Right column layout */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.right-column .cv-section {
+    margin: 0;
+}
+
+/* Adjust timeline in right column */
+.right-column .timeline {
+    padding-left: 30px;
+}
+
+/* Adjust education section spacing */
+.right-column .education-timeline {
+    margin-top: 2rem;
+}
+
+/* Work Experience */
+.work-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.work-item {
+    margin-bottom: 1rem;
+}
+
+.work-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.company {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.achievements {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #ff4f4f;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -30px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ff4f4f;
+    border-radius: 50%;
+    background: white;
+}
+
+.timeline-marker.filled {
+    background: #ff4f4f;
+}
+
+.timeline-content {
+    padding-bottom: 1rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.timeline-content .company,
+.timeline-content .institution {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.timeline-content .date {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.timeline-content .location {
+    color: #ff4f4f;
+}
+
+.achievements {
+    margin-top: 0.5rem;
+}
+
+.achievements-title {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.achievements ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.achievements li {
+    position: relative;
+    margin-bottom: 0.25rem;
+}
+
+.achievements li::before {
+    content: '–';
+    position: absolute;
+    left: -1rem;
+}
+
+.contact {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Education */
+.education-item {
+    margin-bottom: 1rem;
+}
+
+.education-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.institution {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+/* Education Section */
+.courses {
+    margin-top: 0.5rem;
+}
+
+.courses-title {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.courses ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.courses li {
+    position: relative;
+    margin-bottom: 0.25rem;
+}
+
+.courses li::before {
+    content: '–';
+    position: absolute;
+    left: -1rem;
+}
+
+.course-label {
+    font-weight: 500;
+}
+
+.institution {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+/* Timeline adjustments for education */
+.timeline-content .location {
+    color: #ff4f4f;
+}
+
+.timeline-content .date {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Certificates Section */
+.certificates-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.certificate-item {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.certificate-item::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--highlight-color);
+    font-weight: bold;
+}
+
+.certificate-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.certificate-item {
+        page-break-inside: avoid;
+}
+
+.certificate-note {
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.25rem !important;
+}
+
+/* Skills Section */
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 1rem;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.skill-name {
+    font-size: 1rem;
+    color: var(--text-color);
+    flex: 1;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.skill-dots {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid #ff4f4f;
+}
+
+.dot.filled {
+    background-color: #ff4f4f;
+}
+
+/* Languages Section */
+.languages-list {
+    margin-top: 0.5rem;
+}
+
+.language-item {
+    position: relative;
+    margin-bottom: 0.25rem;
+    padding-left: 1rem;
+}
+
+.language-item::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+}
+
+.language-name {
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+.language-proficiency {
+    color: var(--text-color);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Personal Projects Section */
+.projects-list {
+    margin-top: 0.5rem;
+}
+
+.project-item {
+    position: relative;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+.project-item::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+}
+
+.project-title {
+    font-weight: 500;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.project-meta {
+    margin-top: 0.25rem;
+    padding-left: 1rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.project-meta p {
+    margin: 0.1rem 0;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.project-meta p::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+}
+
+/* Print styles */
+@media print {
+    /* Set page size and margins */
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    /* Keep original styles */
+    body {
+        background: var(--background-color);
+        font-size: 16px; /* Keep original font size */
+    }
+    
+    .cv-container {
+        max-width: 210mm; /* A4 width */
+        width: 100%;
+        margin: 0 auto;
+        padding: 20mm;
+        background: white;
+        box-shadow: none;
+        transform: scale(0.95); /* Slightly scale down to ensure fitting */
+        transform-origin: top center;
+    }
+
+    /* Keep original layout */
+    .cv-header {
+        display: flex;
+        margin-bottom: 2rem;
+    }
+
+    .two-column-grid {
+        display: grid;
+        grid-template-columns: 50% 35%;
+        gap: 5%;
+    }
+
+    /* Keep original font sizes */
+    .header-name {
+        font-size: 2.5rem;
+    }
+    
+    .header-title-text {
+        font-size: 1.1rem;
+    }
+    
+    .section-header {
+        font-size: 1.25rem;
+    }
+    
+    .contact-item {
+        font-size: 0.9rem;
+    }
+
+    /* Keep original dimensions */
+    .profile-photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* Preserve original spacing */
+    .header-left, .header-right {
+        gap: 1rem;
+    }
+    
+    .contact-list {
+        left: -10%;
+        gap: 0.5rem;
+    }
+
+    /* Prevent unwanted page breaks */
+    .cv-section {
+        page-break-inside: avoid;
+    }
+
+    .work-item, .education-item, .certificate-item, 
+    .project-item, .skill-item, .language-item {
+        page-break-inside: avoid;
+    }
+
+    /* Hide background decorations */
+    .bg-decoration-top,
+    .bg-decoration-bottom {
+        display: none;
+    }
+
+    /* Ensure all images print properly */
+    img {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    /* Preserve list styles */
+    ul, ol {
+        padding-left: inherit;
+        margin-left: inherit;
+    }
+
+    .achievements ul, .courses ul {
+        padding-left: inherit;
+    }
+}
